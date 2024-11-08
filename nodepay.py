@@ -7,12 +7,12 @@ from loguru import logger
 from requests.exceptions import ProxyError, Timeout
 from colorama import init, Fore, Style
 
-
+# Inisialisasi colorama
 init(autoreset=True)
 
 PING_INTERVAL = 30
 MAX_RETRIES = 3
-MAX_PROXIES = 1000
+MAX_PROXIES = 100
 
 DOMAIN_API = {
     "SESSION": "https://api.nodepay.ai/api/auth/session",
@@ -56,7 +56,8 @@ def clear_terminal():
 def print_welcome_message():
     """Menampilkan pesan 'BACTIAR' di atas terminal dengan gaya dan warna."""
     clear_terminal()
-    print(Fore.GREEN + Style.BRIGHT + "BACTIAR".center(291))  
+    print(Fore.GREEN + Style.BRIGHT + "BACTIAR 291".center(291)) 
+    print(Fore.YELLOW + Style.BRIGHT + "\nSkrip segera dimulai...\n")
 
 async def render_profile_info(proxy):
     global browser_id, token_info, account_info
@@ -180,7 +181,7 @@ def remove_proxy_from_list(proxy):
 
 async def main():
     load_token()
-    print_welcome_message()  # Menampilkan pesan "BACTIAR"
+    print_welcome_message()  
 
     with open('proxy.txt', 'r') as f:
         all_proxies = f.read().splitlines()
