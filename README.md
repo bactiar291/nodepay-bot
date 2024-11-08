@@ -14,22 +14,6 @@ NP_TOKEN akan muncul di konsol setelah Anda menekan Enter. Teks yang tercetak di
 ![Screenshot](https://raw.githubusercontent.com/bactiar291/nodepay-bot/main/ss.png)
 
 
-# contoh jika berhasil konek
-```bash
-INFO    | __main__:ping:106 - Ping successful via proxy http://username:password@198.23.239.134:6540: {'code': 0, 'message': 'Ping successful'}
-INFO    | __main__:render_profile_info:75 - Account info loaded successfully for proxy http://username:password@198.23.239.134:6540
-INFO    | __main__:start_ping:91 - Ping started for proxy http://username:password@198.23.239.134:6540
-INFO    | __main__:ping:106 - Ping successful via proxy http://username:password@198.23.239.134:6540: {'code': 0, 'message': 'Ping successful'}
-INFO    | __main__:render_profile_info:75 - Profile information for proxy http://username:password@198.23.239.134:6540: UID: 1234567
-```
-# contoh jika gagal 
-```bash
-ERROR   | __main__:call_api:89 - Error during API call with proxy http://username:password@198.23.239.134:6540: ConnectionError('Failed to establish a new connection')
-ERROR   | __main__:ping:124 - Ping failed via proxy http://username:password@198.23.239.134:6540: ConnectionError('Failed to establish a new connection')
-ERROR   | __main__:render_profile_info:72 - Error in render_profile_info for proxy http://username:password@198.23.239.134:6540: ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 502 Bad Gateway'))
-INFO    | __main__:ping:126 - Proxy http://username:password@198.23.239.134:6540 failed after 3 retries. Removing proxy from list.
-```
-
 # untuk proses instalasi ikuti instruksi dibawah ini :
 
 ```bash
@@ -50,6 +34,22 @@ jalankan dengan perintah :
 ```bash
 python3 nodepay.py
 ```
+# contoh jika berhasil konek
+```bash
+INFO    | __main__:ping:106 - Ping successful via proxy http://username:password@198.23.239.134:6540: {'code': 0, 'message': 'Ping successful'}
+INFO    | __main__:render_profile_info:75 - Account info loaded successfully for proxy http://username:password@198.23.239.134:6540
+INFO    | __main__:start_ping:91 - Ping started for proxy http://username:password@198.23.239.134:6540
+INFO    | __main__:ping:106 - Ping successful via proxy http://username:password@198.23.239.134:6540: {'code': 0, 'message': 'Ping successful'}
+INFO    | __main__:render_profile_info:75 - Profile information for proxy http://username:password@198.23.239.134:6540: UID: 1234567
+```
+# contoh jika gagal 
+```bash
+ERROR   | __main__:call_api:89 - Error during API call with proxy http://username:password@198.23.239.134:6540: ConnectionError('Failed to establish a new connection')
+ERROR   | __main__:ping:124 - Ping failed via proxy http://username:password@198.23.239.134:6540: ConnectionError('Failed to establish a new connection')
+ERROR   | __main__:render_profile_info:72 - Error in render_profile_info for proxy http://username:password@198.23.239.134:6540: ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 502 Bad Gateway'))
+INFO    | __main__:ping:126 - Proxy http://username:password@198.23.239.134:6540 failed after 3 retries. Removing proxy from list.
+```
+
 done bang 
 semoga bermanfaat 
 
