@@ -2,12 +2,17 @@ import asyncio
 import requests
 import time
 import uuid
+import os
 from loguru import logger
 from requests.exceptions import ProxyError, Timeout
+from colorama import init, Fore, Style
+
+
+init(autoreset=True)
 
 PING_INTERVAL = 30
 MAX_RETRIES = 3
-MAX_PROXIES = 100
+MAX_PROXIES = 1000
 
 DOMAIN_API = {
     "SESSION": "https://api.nodepay.ai/api/auth/session",
@@ -43,6 +48,15 @@ def load_token():
     except Exception as e:
         logger.error(f"Failed to load token: {e}")
         raise SystemExit("Exiting due to failure in loading token")
+
+def clear_terminal():
+    """Membersihkan layar terminal."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def print_welcome_message():
+    """Menampilkan pesan 'BACTIAR' di atas terminal dengan gaya dan warna."""
+    clear_terminal()
+    print(Fore.GREEN + Style.BRIGHT + "BACTIAR".center(291))  
 
 async def render_profile_info(proxy):
     global browser_id, token_info, account_info
@@ -166,6 +180,7 @@ def remove_proxy_from_list(proxy):
 
 async def main():
     load_token()
+    print_welcome_message()  # Menampilkan pesan "BACTIAR"
 
     with open('proxy.txt', 'r') as f:
         all_proxies = f.read().splitlines()
